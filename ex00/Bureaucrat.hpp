@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jenne <jpflegha@student.42heilbronn.de>    +#+  +:+       +#+        */
+/*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 14:56:06 by jenne             #+#    #+#             */
-/*   Updated: 2026/05/28 17:18:49 by jenne            ###   ########.fr       */
+/*   Updated: 2026/05/30 18:50:19 by Jpflegha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAURCRAT_HPP
-#define BUREAURCRAT_HHP
+#ifndef Bureaucrat_HPP
+#define Bureaucrat_HPP
 
 #include <string>
 #include <iostream>
@@ -43,7 +43,7 @@ class Bureaucrat
             public:
                 const char *what() const throw();
         };
-        Bureaucrat~();
+        ~Bureaucrat();
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
