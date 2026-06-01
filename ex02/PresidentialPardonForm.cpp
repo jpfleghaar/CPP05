@@ -1,0 +1,70 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 14:44:21 by Jpflegha          #+#    #+#             */
+/*   Updated: 2026/06/01 15:11:17 by Jpflegha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PresidentialPardonForm.hpp"
+
+PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon Form", 25, 5)
+{
+    std::cout << "Default Presidential Pardon Form constructor called" << std::endl;
+	this->setTarget("default Presidential Pardon Form Target");
+}
+
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Presidential Pardon Form", 25, 5)
+{
+    std::cout << "Presidential Pardon Form constructor called" << std::endl;
+	if(!(target.empty()))
+		this->setTarget(target);
+	this->setSign(this->getSign());
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
+{
+    std::cout << "Presidential Pardon Form copy assignment constructor called" << std::endl;
+    *this = copy;
+}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
+{
+    std::cout << "Presidential Pardon Form copy constructor called" << std::endl;
+    if(this == &copy)
+        return(*this);
+    this->setSign(copy.getSign());
+    this->setTarget(copy.getTarget());
+    return(*this);
+}
+
+void    PresidentialPardonForm::execute(const Bureaucrat &someone) const
+{
+    if(this->getSign())
+    {
+        if(someone.getGrade() <= 5)
+        {
+            std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+			std::cout << "bureaucrat " << someone.getName() << " someone " << this->getName() << " for " << this->getTarget() << std::endl;
+        }
+        else
+        {
+            std::cout << "Bureaucrat " <<someone.getName() << " can't exexute " << this->getName() << " for " << this->getTarget() << std::endl;
+            throw Bureaucrat::GradeTooLowException();
+        }
+    }
+    else
+    {
+        std::cout << "Bureaucrat " << someone.getName() << " can't execute " << this->getName() << " for " << this->getTarget() << std::endl;
+        throw(AFormIsNotSignedException());
+    }
+
+}
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+    std::cout << "Presidential Pardon Form deconstructor called" << std::endl;
+}

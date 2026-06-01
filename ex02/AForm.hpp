@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:12:08 by Jpflegha          #+#    #+#             */
-/*   Updated: 2026/05/31 18:40:20 by Jpflegha         ###   ########.fr       */
+/*   Updated: 2026/06/01 14:43:29 by Jpflegha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 #include <string>
 #include <iostream>
 
+class Bureaucrat;
 
-class Form
+class AForm
 {
     private:
         const std::string name;
         bool sign;
         const int signGrade;
         const int exceGrade;
+        std::string target;
         
     public:
-        Form();
-        Form(const std::string FName, const int sGrade, const int eGrade);
-        Form(const Form &copy);
-        Form &operator=(const Form &copy);
+        AForm();
+        AForm(const std::string FName, const int sGrade, const int eGrade);
+        AForm(const AForm &copy);
+        AForm &operator=(const AForm &copy);
 
         std::string getName() const;
         int getSignGrade() const;
@@ -38,16 +40,22 @@ class Form
         bool getSign() const;
         void setSign(bool sign);
         void beSigned(Bureaucrat &B);
-
-        class FormIsSignedException : public std::exception
+        std::string getTarget() const;
+        void		setTarget(std::string target);
+        
+        class AFormIsSignedException : public std::exception
         {
           public:
             const char *what() const throw();  
         };
-
-        ~Form();
+        class AFormIsNotSignedException: public std::exception
+		{
+			const char *what() const throw();
+		};
+        
+        virtual ~AForm();
 };
 
-std::ostream &operator<<(std::ostream &os, const Form &obj);
+std::ostream &operator<<(std::ostream &os, const AForm &obj);
 
 #endif
