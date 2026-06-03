@@ -6,11 +6,11 @@
 #    By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 15:11:25 by jenne             #+#    #+#              #
-#    Updated: 2026/05/30 19:07:41 by Jpflegha         ###   ########.fr        #
+#    Updated: 2026/05/31 19:00:19 by Jpflegha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureacrat
+NAME = Bureacrat00
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++17
 SRC = main.cpp Bureaucrat.cpp
