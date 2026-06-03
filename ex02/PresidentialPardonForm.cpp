@@ -6,7 +6,7 @@
 /*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:44:21 by Jpflegha          #+#    #+#             */
-/*   Updated: 2026/06/01 15:11:17 by Jpflegha         ###   ########.fr       */
+/*   Updated: 2026/06/03 16:49:13 by Jpflegha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 	this->setSign(this->getSign());
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : AForm(copy)
 {
     std::cout << "Presidential Pardon Form copy assignment constructor called" << std::endl;
     *this = copy;
@@ -42,28 +42,12 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
     return(*this);
 }
 
-void    PresidentialPardonForm::execute(const Bureaucrat &someone) const
+void PresidentialPardonForm::execute(const Bureaucrat &someone) const
 {
-    if(this->getSign())
-    {
-        if(someone.getGrade() <= 5)
-        {
-            std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-			std::cout << "bureaucrat " << someone.getName() << " someone " << this->getName() << " for " << this->getTarget() << std::endl;
-        }
-        else
-        {
-            std::cout << "Bureaucrat " <<someone.getName() << " can't exexute " << this->getName() << " for " << this->getTarget() << std::endl;
-            throw Bureaucrat::GradeTooLowException();
-        }
-    }
-    else
-    {
-        std::cout << "Bureaucrat " << someone.getName() << " can't execute " << this->getName() << " for " << this->getTarget() << std::endl;
-        throw(AFormIsNotSignedException());
-    }
-
+    this->checkExecute(someone);
+    std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
+
 PresidentialPardonForm::~PresidentialPardonForm()
 {
     std::cout << "Presidential Pardon Form deconstructor called" << std::endl;

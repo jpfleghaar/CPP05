@@ -80,6 +80,7 @@ void    AForm::setTarget(std::string NewTarget)
     this->target = NewTarget;
 }
 
+
 void AForm::beSigned(Bureaucrat &B)
 {
     if(this->sign)
@@ -99,7 +100,15 @@ const char* AForm::AFormIsSignedException::what() const throw()
 
 const char* AForm::AFormIsNotSignedException::what() const throw()
 {
-    return("AForm is not signed jet");
+    return("AForm is not signed yet");
+}
+
+void AForm::checkExecute(const Bureaucrat &someone) const
+{
+    if(!this->sign)
+        throw(AFormIsNotSignedException());
+    else if(someone.getGrade() > this->exceGrade)
+        throw(Bureaucrat::GradeTooLowException());
 }
 
 AForm::~AForm()

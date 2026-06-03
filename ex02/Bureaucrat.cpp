@@ -6,12 +6,12 @@
 /*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 15:34:55 by jenne             #+#    #+#             */
-/*   Updated: 2026/05/31 18:32:01 by Jpflegha         ###   ########.fr       */
+/*   Updated: 2026/06/03 16:51:22 by Jpflegha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("NomenNescio")
 {
@@ -67,11 +67,24 @@ void Bureaucrat::decreaseGrade()
     this->grade -= 1;
 }
 
-void Bureaucrat::singForm(Form &form)
+void Bureaucrat::singForm(AForm &form)
 {
     form.beSigned(*this);
 }
 
+void Bureaucrat::executeForm(AForm const &form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << this->getName() << " failed to execute " 
+                  << form.getName() << ": " << e.what() << std::endl;
+    }
+}
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
     return("Grade is to High");

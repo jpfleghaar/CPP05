@@ -6,7 +6,7 @@
 /*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 14:12:08 by Jpflegha          #+#    #+#             */
-/*   Updated: 2026/06/01 14:43:29 by Jpflegha         ###   ########.fr       */
+/*   Updated: 2026/06/03 17:02:21 by Jpflegha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ class AForm
         void beSigned(Bureaucrat &B);
         std::string getTarget() const;
         void		setTarget(std::string target);
+        void checkExecute(const Bureaucrat &copy) const;
+        virtual void execute(Bureaucrat const &someone) const = 0;
         
         class AFormIsSignedException : public std::exception
         {

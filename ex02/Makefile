@@ -6,14 +6,14 @@
 #    By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 15:11:25 by jenne             #+#    #+#              #
-#    Updated: 2026/06/01 14:07:25 by Jpflegha         ###   ########.fr        #
+#    Updated: 2026/06/03 17:03:18 by Jpflegha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureacrat02
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++17
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
