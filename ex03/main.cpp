@@ -6,7 +6,7 @@
 /*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 17:00:22 by Jpflegha          #+#    #+#             */
-/*   Updated: 2026/06/04 13:19:11 by Jpflegha         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:22:30 by Jpflegha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int main(void)
     printSeparator("Intern creates unknown form");
     try
     {
-        AForm *form = intern.makeForm("unknown form", "target");
+        AForm *form = intern.makeForm("unknown", "target");
         if (!form)
             std::cout << "No form created" << std::endl;
         delete form;
