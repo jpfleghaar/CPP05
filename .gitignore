@@ -1,0 +1,19 @@
+# Build artifacts
+*.o
+*.d
+ex00/Bureaucrat00
+ex01/Bureaucrat01
+ex02/Bureaucrat02
+ex03/Bureaucrat03
+
+# Files created by the exercises at runtime
+*_shrubbery
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Secrets
+.env
+secrets/
