@@ -12,7 +12,7 @@
 
 NAME = Bureacrat03
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++17
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp Inter.cpp
 OBJ = $(SRC:.cpp=.o)
 
