@@ -1,6 +1,6 @@
 # C++ Module 05 — Exceptions
 
-A bureaucracy simulation in C++98: bureaucrats with grades, forms that need a minimum grade, and custom exceptions.
+A bureaucracy simulation in C++: bureaucrats with grades, forms that need a minimum grade, and custom exceptions.
 
 *This project was created as part of the 42 curriculum by jpflegha.*
 
@@ -37,7 +37,7 @@ garden_shrubbery file created
 Alice executed Shrubbery Creation Form
 ```
 
-Program names: `ex00/Bureaucrat00` … `ex03/Bureaucrat03`. Each exercise has its own Makefile (`c++ -Wall -Wextra -Werror -std=c++98`).
+Program names: `ex00/Bureaucrat00` … `ex03/Bureaucrat03`. Each exercise has its own Makefile (`c++ -Wall -Wextra -Werror -std=c++17`).
 
 ## Project structure
 
