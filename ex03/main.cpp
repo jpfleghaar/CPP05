@@ -12,7 +12,7 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "Inter.hpp"
+#include "Intern.hpp"
 
 static void printSeparator(const std::string &title)
 {
@@ -22,7 +22,7 @@ static void printSeparator(const std::string &title)
 int main(void)
 {
     std::srand(std::time(0));
-    Inter intern;
+    Intern intern;
 
     // Test 1: create shrubbery creation form
     printSeparator("Intern creates Shrubbery Creation Form");

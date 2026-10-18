@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Inter.cpp                                          :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Inter.hpp"
+#include "Intern.hpp"
 
-Inter::Inter()
+Intern::Intern()
 {
-    std::cout << "Default Inter constructor called" << std::endl;
+    std::cout << "Default Intern constructor called" << std::endl;
 }
 
-Inter::Inter(const Inter &copy)
+Intern::Intern(const Intern &copy)
 {
-    std::cout << "Inter copy constructor called" << std::endl;
+    std::cout << "Intern copy constructor called" << std::endl;
     *this = copy;
 }
 
-//Inter has no variables, so (void)copy
-Inter &Inter::operator=(const Inter &copy)
+//Intern has no variables, so (void)copy
+Intern &Intern::operator=(const Intern &copy)
 {
     (void)copy;
     return (*this);
 }
 
-AForm *Inter::makeForm(std::string FName, std::string target)
+AForm *Intern::makeForm(std::string FName, std::string target)
 {
     int index = -1;
     std::string Forms[3] =
@@ -48,21 +48,21 @@ AForm *Inter::makeForm(std::string FName, std::string target)
     switch(index)
     {
         case 0:
-            std::cout << "Inter creates " << FName << " form" << std::endl;
+            std::cout << "Intern creates " << FName << " form" << std::endl;
             return(new ShrubberyCreationForm(target));
         case 1:
-            std::cout << "Inter creates " << FName << " form" << std::endl;
+            std::cout << "Intern creates " << FName << " form" << std::endl;
             return(new RobotomyRequestForm(target));
         case 2:
-            std::cout << "Inter creates " << FName << " form" << std::endl;
+            std::cout << "Intern creates " << FName << " form" << std::endl;
             return(new PresidentialPardonForm(target));
         default:
-            std::cout << "Inter can't create " << FName << " form" << std::endl;
+            std::cout << "Intern can't create " << FName << " form" << std::endl;
             return(NULL);
     }
 }
 
-Inter::~Inter()
+Intern::~Intern()
 {
-    std::cout << "Inter deconstructor called" << std::endl;
+    std::cout << "Intern deconstructor called" << std::endl;
 }

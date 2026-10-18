@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Inter.hpp                                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jpflegha <jpflegha@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTER_HPP
-#define INTER_HPP
+#ifndef INTERN_HPP
+#define INTERN_HPP
 
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-class Inter
+class Intern
 {
   public:
-    Inter();
-    Inter(const Inter &copy);
-    Inter &operator=(const Inter &copy);
+    Intern();
+    Intern(const Intern &copy);
+    Intern &operator=(const Intern &copy);
     AForm *makeForm(std::string formName, std::string target);
-    ~Inter();
+    ~Intern();
 };
 
 
