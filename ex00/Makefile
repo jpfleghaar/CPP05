@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureacrat00
+NAME = Bureaucrat00
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp Bureaucrat.cpp
